@@ -1,0 +1,175 @@
+:root {
+    --init-scale: 0.5;
+    --loader-cycle-duration: 1s;
+    --final-scale: 0.65;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotateZ(0deg);
+    }
+
+    50% {
+        transform: rotateZ(180deg)
+    }
+}
+
+.loader-flex-container {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    display: flex;
+    background-color: #0008;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    display: grid;
+    grid-template-columns: 20vmin 20vmin 20vmin;
+    animation-name: spin;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    animation-duration: calc(var(--loader-cycle-duration) * 4);
+    animation-iteration-count: infinite;
+}
+
+.loader-arrow {
+    font-size: 15vmin;
+    color: #fff;
+    height: 20vmin;
+    width: 20vmin;
+}
+
+.lt-arrow {
+    animation-timing-function: linear;
+    animation-duration: var(--loader-cycle-duration);
+    animation-name: bulge-lt-arrow;
+    animation-iteration-count: infinite;
+}
+
+.up-arrow {
+    animation-timing-function: linear;
+    animation-duration: var(--loader-cycle-duration);
+    animation-name: bulge-up-arrow;
+    animation-iteration-count: infinite;
+}
+
+.rt-arrow {
+    animation-timing-function: linear;
+    animation-duration: var(--loader-cycle-duration);
+    animation-name: bulge-rt-arrow;
+    animation-iteration-count: infinite;
+}
+
+.dw-arrow {
+    animation-timing-function: linear;
+    animation-duration: var(--loader-cycle-duration);
+    animation-name: bulge-dw-arrow;
+    animation-iteration-count: infinite;
+}
+
+@keyframes bulge-lt-arrow {
+    0% {
+        transform: scale(var(--init-scale));
+    }
+
+    20% {
+        transform: scale(var(--final-scale));
+    }
+
+    40% {
+        transform: scale(var(--init-scale));
+    }
+
+    60% {
+        transform: scale(var(--init-scale));
+    }
+
+    80% {
+        transform: scale(var(--init-scale));
+    }
+
+    100% {
+        transform: scale(var(--init-scale));
+    }
+}
+
+@keyframes bulge-up-arrow {
+    0% {
+        transform: scale(var(--init-scale));
+    }
+
+    20% {
+        transform: scale(var(--init-scale));
+    }
+
+    40% {
+        transform: scale(var(--final-scale));
+    }
+
+    60% {
+        transform: scale(var(--init-scale));
+    }
+
+    80% {
+        transform: scale(var(--init-scale));
+    }
+
+    100% {
+        transform: scale(var(--init-scale));
+    }
+}
+
+@keyframes bulge-rt-arrow {
+    0% {
+        transform: scale(var(--init-scale));
+    }
+
+    20% {
+        transform: scale(var(--init-scale));
+    }
+
+    40% {
+        transform: scale(var(--init-scale));
+    }
+
+    60% {
+        transform: scale(var(--final-scale));
+    }
+
+    80% {
+        transform: scale(var(--init-scale));
+    }
+
+    100% {
+        transform: scale(var(--init-scale));
+    }
+}
+
+@keyframes bulge-dw-arrow {
+    0% {
+        transform: scale(var(--init-scale));
+    }
+
+    20% {
+        transform: scale(var(--init-scale));
+    }
+
+    40% {
+        transform: scale(var(--init-scale));
+    }
+
+    60% {
+        transform: scale(var(--init-scale));
+    }
+
+    80% {
+        transform: scale(var(--final-scale));
+    }
+
+    100% {
+        transform: scale(var(--init-scale));
+    }
+}
+

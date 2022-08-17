@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LeConvo</title>
+    <link rel="stylesheet" href="assets/css/loader.css">
+    <link rel="stylesheet" href="assets/css/page.css">
+    <link rel="shortcut icon" href="assets/png/leconvo.png">
+    <script src="assets/js/loader.js"></script>
+    <script src="assets/js/UI.js"></script>
+</head>
+
+<body onload="init()">
+    <div id="loader">
+        <div class="loader-flex-container">
+            <div class="loader">
+                <div></div>
+                <div>
+                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="up-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                </div>
+                <div></div>
+
+                <div style="transform: rotateZ(-90deg);">
+                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="lt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                </div>
+                <div></div>
+                <div style="transform: rotateZ(90deg);">
+                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="rt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                </div>
+
+                <div></div>
+                <div style="transform: rotateZ(180deg);">
+                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="dw-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                </div>
+                <div></div>
+            </div>
+        </div>
+        <div class="loader-flex-container" style="background-color: #0000;">
+            <img src="assets/png/leconvo-nobg.png" style="height: 20vmin;width:20vmin">
+        </div>
+    </div>
+    <div id="page">
+        <div id="top-bar">
+            <div id="top-left">
+                <img src="assets/png/defpfp.jpg" class="corner-logo"><!--
+                --><img src="assets/png/settings.png" class="corner-logo">
+            </div>
+            <div id="top-right" style="display: flex;">
+                <img src="assets/png/leconvo.png" class="corner-logo">
+                <div style="line-height: calc(var(--topbar-height) - 2vmin);height: var(--topbar-height);color: #e1ffff;padding: 1vmin;">LeConvo</div>
+            </div>
+        </div>
+        <div id="grp-chat-list"></div>
+        <div id="dm-chat-list"></div>
+        <div id="msg-disp-box"></div>
+        <div id="msg-inp-box">
+            <div id="msg-inp-container">
+                <textarea id="msg" placeholder="Enter Message..."></textarea>
+                <button id="send"></button>
+            </div>
+            <div id="additionalfeatures"></div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -14,8 +14,10 @@
 }
 
 :root {
-    --topbar-height: 7vmin;
-    --topbar-width: calc(100vw - 5vmin);
+    --grp-chat-list-width: 5vmin;
+    --dm-chat-list-width: 20vmin;
+    --topbar-height: 5vmin;
+    --topbar-width: calc(100vw - var(--dm-chat-list-width) - var(--grp-chat-list-width) - 2px);
 }
 
 @font-face {
@@ -33,12 +35,12 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: var(--topbar-width) calc(100vw - var(--topbar-width));
+    grid-template-columns: var(--grp-chat-list-width) var(--dm-chat-list-width) var(--topbar-width) calc(100vw - var(--topbar-width) - var(--dm-chat-list-width) - var(--grp-chat-list-width));
     grid-template-rows: var(--topbar-height) calc(100vh - var(--topbar-height) - 10vmin - 1px) calc(10vmin - 1px);
     grid-template-areas:
-        "topbar topbar"
-        "msgdispbox msgdispbox"
-        "msginpbox msginpbox";
+        "profile-photo topbar topbar topbar"
+        "grp-chat-list dm-chat-list msgdispbox msgdispbox"
+        "grp-chat-list dm-chat-list msginpbox msginpbox";
     grid-gap: 1px;
 }
 
@@ -79,6 +81,18 @@
     grid-template-rows: 100%;
     grid-template-areas:
         "msginp additionalfeatures"
+}
+
+#page > #dm-chat-list {
+    grid-area: dm-chat-list;
+}
+
+#page > #grp-chat-list {
+    grid-area: grp-chat-list;
+}
+
+#page > #profile-photo {
+    grid-area: profile-photo;
 }
 
 #top-bar > * {

@@ -36,26 +36,29 @@
                 <div></div>
             </div>
         </div>
-        <div class="loader-flex-container" style="background-color: #0000;">
+        <div class="loader-flex-container" style="background-color: #0000;" style="z-index: 15;">
             <img src="assets/png/leconvo-nobg.png" style="height: 20vmin;width:20vmin">
         </div>
     </div>
     <div id="page">
-        <div id="profile-photo">
-            <img src="assets/png/defpfp.jpg" class="corner-logo">
+        <div id="profile-photo" data-tooltip="Accounts">
+            <button alt="user profile photo" style="background-image: url('assets/png/defpfp.jpg')" class="corner-logo"></button>
         </div>
         <div id="top-bar">
             <div id="top-left">
-                <!--
-                --><img src="assets/png/settings.png" class="corner-logo">
+                <button data-tooltip="Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
             </div>
             <div id="top-right" style="display: flex;">
-                <img src="assets/png/leconvo.png" class="corner-logo">
+                <img src="assets/png/leconvo.png" class="corner-logo" alt="le convo app logo">
                 <div style="line-height: calc(var(--topbar-height) - 2vmin);height: var(--topbar-height);color: #e1ffff;padding: 1vmin;">LeConvo</div>
             </div>
         </div>
-        <div id="grp-chat-list"></div>
-        <div id="dm-chat-list"></div>
+        <div id="grp-chat-list" data-tooltip="Sockets(Group Chats)">
+            <img style="background-color: inherit;" class="corner-logo" src="assets/png/grp-ico.png">
+        </div>
+        <div id="dm-chat-list" data-tooltip="Direct Messages(Coming Soon...)">
+            <img style="background-color: inherit;" class="corner-logo" src="assets/png/grp-ico.png">
+        </div>
         <div id="msg-disp-box"></div>
         <div id="msg-inp-box">
             <div id="msg-inp-container">

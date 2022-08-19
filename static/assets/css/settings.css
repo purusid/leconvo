@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: 'fixedsys', ariel, serif, auto;
+    transition: all .3s linear;
+    font-size: 2.5vmin;
+    z-index: inherit;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+:root {
+    --topbar-height: 5vmin;
+    --topbar-width: 100vw;
+    --dm-list-width: 20vw;
+    --grp-chat-width: 20vw;
+}
+
+@font-face {
+    font-family: 'fixedsys';
+    src: url('https://purusidcontent.github.io/ttf/fixedsys.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#chat-page {
+    background-color: #e1ffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: var(--topbar-height) calc(100vh - var(--topbar-height) - var(--msg-box-height)) var(--msg-box-height);
+    grid-template-areas:
+        "topbar"
+        "msgdispbox"
+        "msginpbox";
+}
+
+#chat-page > * {
+    background-color: #000;
+}
+
+#chat-page > #top-bar {
+    grid-area: topbar;
+    display: grid;
+    grid-template-columns: var(--topbar-height) calc(80% - var(--topbar-height)) 20%;
+    background-color: #e1ffff;
+    height: var(--topbar-height);
+}
+
+#chat-page > #top-bar > * {
+    background-color: #000;
+    height: var(--topbar-height);
+}
+
+#top-left > * {
+    display: inline-block;
+}
+
+#chat-page > #left-bar {
+    grid-area: leftbar;
+}
+
+#chat-page > #dm-chat-list {
+    grid-area: dm-chat-list;
+}
+
+#chat-page > #grp-chat-list {
+    grid-area: grp-chat-list;
+}
+
+#chat-page > #profile-photo {
+    grid-area: profile-photo;
+}
+
+#top-bar > * {
+    display: inline-block;
+}
+
+.corner-logo {
+    height: calc(var(--topbar-height) - 1vmin);
+    width: calc(var(--topbar-height) - 1vmin);
+    margin: .5vmin;
+    border-radius: 1vmin;
+    background-color: inherit;
+    border: none;
+    color: #333;
+    background-size: 100%;
+}
+
+button.corner-logo:hover{
+    border-radius: 0;
+}
+
+[data-tooltip]:before {
+    /* needed - do not touch */
+    content: attr(data-tooltip);
+    position: absolute;
+    opacity: 0;
+    
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: .5vmin;
+    color: #e1ffff;
+    border-radius: 1vmin;
+    font-size: 2vmin;
+    line-height: 2vmin;
+    pointer-events: none;
+}
+
+[data-tooltip]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+    
+    /* customizable */
+    background: #333;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+}

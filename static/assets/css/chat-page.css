@@ -1,3 +1,5 @@
+/*basic styles*/
+
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +15,16 @@
     width: 0;
 }
 
+/*root variables*/
+
 :root {
-    --grp-chat-list-width: 5vmin;
-    --dm-chat-list-width: 5vmin;
     --msg-box-height: 7vmin;
     --msg-inp-height: 4vmin;
     --topbar-height: 5vmin;
-    --topbar-width: calc(100vw - var(--dm-chat-list-width) - var(--grp-chat-list-width) - 2px);
+    --topbar-width: 100vw;
 }
+
+/*fixed-width font*/
 
 @font-face {
     font-family: 'fixedsys';
@@ -29,7 +33,9 @@
     font-style: normal;
 }
 
-#page {
+/*chat page styles*/
+
+#chat-page {
     background-color: #e1ffff;
     position: fixed;
     top: 0;
@@ -37,29 +43,27 @@
     height: 100vh;
     width: 100vw;
     display: grid;
-    grid-template-columns: var(--grp-chat-list-width) var(--dm-chat-list-width) var(--topbar-width) calc(100vw - var(--topbar-width) - var(--dm-chat-list-width) - var(--grp-chat-list-width));
+    grid-template-columns: 100%;
     grid-template-rows: var(--topbar-height) calc(100vh - var(--topbar-height) - var(--msg-box-height)) var(--msg-box-height);
     grid-template-areas:
-        "profile-photo topbar topbar topbar"
-        "grp-chat-list dm-chat-list msgdispbox msgdispbox"
-        "grp-chat-list dm-chat-list msginpbox msginpbox";
-    grid-gap: 1px;
+        "topbar"
+        "msgdispbox"
+        "msginpbox";
 }
 
-#page > * {
+#chat-page > * {
     background-color: #000;
 }
 
-#page > #top-bar {
+#chat-page > #top-bar {
     grid-area: topbar;
     display: grid;
-    grid-template-columns: calc(80% - 1px) 20%;
-    grid-gap: 1px;
+    grid-template-columns: var(--topbar-height) calc(80% - var(--topbar-height)) 20%;
     background-color: #e1ffff;
     height: var(--topbar-height);
 }
 
-#page > #top-bar > * {
+#chat-page > #top-bar > * {
     background-color: #000;
     height: var(--topbar-height);
 }
@@ -68,15 +72,18 @@
     display: inline-block;
 }
 
-#page > #left-bar {
+#chat-page > #left-bar {
     grid-area: leftbar;
 }
 
-#page > #msg-disp-box {
+#chat-page > #msg-disp-box {
     grid-area: msgdispbox;
+    background-color: #1f1f1f;
+    box-shadow: inset .5vmin .5vmin .5vmin #0008;
+    padding: 2vmin;
 }
 
-#page > #msg-inp-box {
+#chat-page > #msg-inp-box {
     grid-area: msginpbox;
     display: grid;
     grid-template-columns: 80% 20%;
@@ -85,16 +92,16 @@
         "msginp additionalfeatures"
 }
 
-#page > #dm-chat-list {
+#chat-page > #dm-chat-list {
     grid-area: dm-chat-list;
     background-color: #21232f;
 }
 
-#page > #grp-chat-list {
+#chat-page > #grp-chat-list {
     grid-area: grp-chat-list;
 }
 
-#page > #profile-photo {
+#chat-page > #profile-photo {
     grid-area: profile-photo;
 }
 
@@ -107,17 +114,35 @@
     width: calc(var(--topbar-height) - 1vmin);
     margin: .5vmin;
     border-radius: 1vmin;
-    background-color: #e1ffff;
+    background-color: inherit;
     border: none;
     color: #333;
     background-size: 100%;
+}
+
+.corner-logo:hover{
+    background-color: #888;
 }
 
 button.corner-logo:hover{
     border-radius: 0;
 }
 
-#page > #msg-inp-box > #msg-inp-container {
+.feature-btn{
+    height: calc(var(--msg-inp-height) - 2px);
+    width: calc(var(--msg-inp-height) - 2px);
+    background-color: inherit;
+    border: none;
+    color: #333;
+    background-size: 100%;
+    background-color: inherit;
+}
+
+.feature-btn:hover{
+    background-color: #888;
+}
+
+#chat-page > #msg-inp-box > #msg-inp-container {
     grid-area: msginp;
     background-color: #000;
     padding: calc((var(--msg-box-height) - var(--msg-inp-height)) / 2);
@@ -125,7 +150,7 @@ button.corner-logo:hover{
     grid-template-columns: calc(100% - var(--msg-inp-height)) var(--msg-inp-height);
 }
 
-#page > #msg-inp-box > #msg-inp-container > #msg {
+#chat-page > #msg-inp-box > #msg-inp-container > #msg {
     font-size: 2vmin;
     line-height: 2vmin;
     height: var(--msg-inp-height);
@@ -151,28 +176,32 @@ button.corner-logo:hover{
 
 #send:hover {
     background-color: #888;
+    border-radius: 0;
 }
 
-#page > #msg-inp-box > #additionalfeatures {
+#chat-page > #msg-inp-box > #additionalfeatures {
     grid-area: additionalfeatures;
-    background-color: #888;
-    border: none;
-    margin: 2vmin;
+    background-color: inherit;
+    border: 1px solid #e1ffff;
+    margin: calc((var(--msg-box-height) - var(--msg-inp-height)) / 2);
+    height: var(--msg-inp-height);
+    padding: 0;
+    display: flex;
 }
+
+/*tooltip styles*/
 
 [data-tooltip]:before {
-    /* needed - do not touch */
     content: attr(data-tooltip);
     position: absolute;
     opacity: 0;
-    
-    /* customizable */
     transition: all 0.15s ease;
     padding: .5vmin;
     color: #e1ffff;
     border-radius: 1vmin;
     font-size: 2vmin;
     line-height: 2vmin;
+    pointer-events: none;
 }
 
 [data-tooltip]:hover:before {

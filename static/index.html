@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <title>LeConvo</title>
-    <link rel="stylesheet" href="assets/css/loader.css">
-    <link rel="stylesheet" href="assets/css/page.css">
-    <link rel="shortcut icon" href="assets/png/leconvo.png">
-    <script src="assets/js/loader.js"></script>
-    <script src="assets/js/UI.js"></script>
+    <link rel="stylesheet" href="/assets/css/loader.css">
+    <link rel="stylesheet" href="/assets/css/chat-page.css">
+    <link rel="shortcut icon" href="/assets/png/leconvo.png">
+    <script src="/assets/js/loader.js"></script>
 </head>
 
 <body onload="init()">
@@ -17,55 +16,53 @@
             <div class="loader">
                 <div></div>
                 <div>
-                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="up-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                    <img src="/assets/png/arrow.png" class="up-arrow loader-arrow" style="transform: scale(var(--init-scale));">
                 </div>
                 <div></div>
 
                 <div style="transform: rotateZ(-90deg);">
-                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="lt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                    <img src="/assets/png/arrow.png" class="lt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
                 </div>
                 <div></div>
                 <div style="transform: rotateZ(90deg);">
-                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="rt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                    <img src="/assets/png/arrow.png" class="rt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
                 </div>
 
                 <div></div>
                 <div style="transform: rotateZ(180deg);">
-                    <img src="https://purusidcontent.github.io/ico/arrow.png" class="dw-arrow loader-arrow" style="transform: scale(var(--init-scale));">
+                    <img src="/assets/png/arrow.png" class="dw-arrow loader-arrow" style="transform: scale(var(--init-scale));">
                 </div>
                 <div></div>
             </div>
         </div>
         <div class="loader-flex-container" style="background-color: #0000;" style="z-index: 15;">
-            <img src="assets/png/leconvo-nobg.png" style="height: 20vmin;width:20vmin">
+            <img src="/assets/png/leconvo-nobg.png" style="height: 20vmin;width:20vmin">
         </div>
     </div>
-    <div id="page">
-        <div id="profile-photo" data-tooltip="Accounts">
-            <button alt="user profile photo" style="background-image: url('assets/png/defpfp.jpg')" class="corner-logo"></button>
-        </div>
+    <div id="chat-page">
         <div id="top-bar">
-            <div id="top-left">
-                <button data-tooltip="Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
+            <div style="background-color: #333;">
+                <button data-tooltip="Back To Home Screen" style="background-image: url('/assets/png/backbtn.png')" class="corner-logo" onclick="document.getElementById('chat-page').style.display='none'"></button>
             </div>
-            <div id="top-right" style="display: flex;">
-                <img src="assets/png/leconvo.png" class="corner-logo" alt="le convo app logo">
+            <div>
+                <!--
+                --><button data-tooltip="Chat Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
+            </div>
+            <div id="top-right" style="display: flex;background-color: #333;">
+                <img src="/assets/png/leconvo-nobg.png" class="corner-logo" alt="le convo app logo">
                 <div style="line-height: calc(var(--topbar-height) - 2vmin);height: var(--topbar-height);color: #e1ffff;padding: 1vmin;">LeConvo</div>
             </div>
-        </div>
-        <div id="grp-chat-list" data-tooltip="Sockets(Group Chats)">
-            <img style="background-color: inherit;" class="corner-logo" src="assets/png/grp-ico.png">
-        </div>
-        <div id="dm-chat-list" data-tooltip="Direct Messages(Coming Soon...)">
-            <img style="background-color: inherit;" class="corner-logo" src="assets/png/grp-ico.png">
         </div>
         <div id="msg-disp-box"></div>
         <div id="msg-inp-box">
             <div id="msg-inp-container">
-                <textarea id="msg" placeholder="Enter Message..."></textarea>
-                <button id="send"></button>
+                <textarea id="msg" placeholder="Enter Message..." data-tooltip="Enter Message"></textarea>
+                <button id="send" data-tooltip="Send Message"></button>
             </div>
-            <div id="additionalfeatures"></div>
+            <div id="additionalfeatures">
+                <button class="feature-btn" style="background-image: url('/assets/png/emo-ico.png')" data-tooltip="Emojis"></button>
+                <button class="feature-btn" style="background-image: url('/assets/png/animations-ico.png')" data-tooltip="Animations"></button>
+            </div>
         </div>
     </div>
 </body>

@@ -120,12 +120,9 @@
     background-size: 100%;
 }
 
-.corner-logo:hover{
-    background-color: #888;
-}
-
 button.corner-logo:hover{
     border-radius: 0;
+    background-color: #888;
 }
 
 .feature-btn{

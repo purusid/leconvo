@@ -4,10 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>LeConvo</title>
+    <script src="/assets/js/loader.js"></script>
+    <script src="/assets/js/ui-script.js"></script>
     <link rel="stylesheet" href="/assets/css/loader.css">
     <link rel="stylesheet" href="/assets/css/chat-page.css">
-    <link rel="shortcut icon" href="/assets/png/leconvo.png">
-    <script src="/assets/js/loader.js"></script>
+    <link rel="stylesheet" href="/assets/css/main-page.css">
+    <link rel="shortcut icon" href="/assets/png/leconvo-nobg.png">
 </head>
 
 <body onload="init()">
@@ -45,12 +47,7 @@
                 <button data-tooltip="Back To Home Screen" style="background-image: url('/assets/png/backbtn.png')" class="corner-logo" onclick="document.getElementById('chat-page').style.display='none'"></button>
             </div>
             <div>
-                <!--
-                --><button data-tooltip="Chat Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
-            </div>
-            <div id="top-right" style="display: flex;background-color: #333;">
-                <img src="/assets/png/leconvo-nobg.png" class="corner-logo" alt="le convo app logo">
-                <div style="line-height: calc(var(--topbar-height) - 2vmin);height: var(--topbar-height);color: #e1ffff;padding: 1vmin;">LeConvo</div>
+                <button data-tooltip="Chat Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
             </div>
         </div>
         <div id="msg-disp-box"></div>
@@ -62,6 +59,42 @@
             <div id="additionalfeatures">
                 <button class="feature-btn" style="background-image: url('/assets/png/emo-ico.png')" data-tooltip="Emojis"></button>
                 <button class="feature-btn" style="background-image: url('/assets/png/animations-ico.png')" data-tooltip="Animations"></button>
+            </div>
+        </div>
+    </div>
+    <div id="main-page">
+        <div id="top-bar">
+            <div style="background-color: #333;">
+                <button data-tooltip="LeConvo Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo" onclick="window.location='/settings/';"></button>
+            </div>
+            <div>
+            </div>
+            <div id="top-right" style="display: flex;background-color: #333;">
+                <img src="/assets/png/leconvo-nobg.png" class="corner-logo" alt="le convo app logo">
+                <div style="line-height: var(--topbar-height);height: var(--topbar-height);color: #e1ffff;font-size: 3vmin;">LeConvo</div>
+            </div>
+        </div>
+        <div id="chat-list-area">
+            <div id="dm-chat-list">
+                <div class="list-title">
+                    <img class="list-title-ico" src="/assets/png/defpfp.png">
+                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 1vmin;font-size: 3vmin;">Contacts</div>
+                </div>
+                <div id="contact-list"></div>
+            </div>
+            <div id="grp-chat-list">
+                <div class="list-title">
+                    <img class="list-title-ico" src="/assets/png/leconvo-nobg.png">
+                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Convos</div>
+                </div>
+                <div id="convo-list"></div>
+            </div>
+            <div id="meet-list">
+                <div class="list-title">
+                    <img class="list-title-ico" src="/assets/png/meet-ico.png">
+                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Meetings</div>
+                </div>
+                <div id="meeting-list"></div>
             </div>
         </div>
     </div>

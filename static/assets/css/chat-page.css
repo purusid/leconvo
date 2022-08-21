@@ -20,8 +20,6 @@
 :root {
     --msg-box-height: 7vmin;
     --msg-inp-height: 4vmin;
-    --topbar-height: 5vmin;
-    --topbar-width: 100vw;
 }
 
 /*fixed-width font*/
@@ -49,6 +47,7 @@
         "topbar"
         "msgdispbox"
         "msginpbox";
+    display: none;
 }
 
 #chat-page > * {
@@ -58,7 +57,7 @@
 #chat-page > #top-bar {
     grid-area: topbar;
     display: grid;
-    grid-template-columns: var(--topbar-height) calc(80% - var(--topbar-height)) 20%;
+    grid-template-columns: var(--topbar-height) calc(100% - var(--topbar-height));
     background-color: #e1ffff;
     height: var(--topbar-height);
 }
@@ -109,25 +108,9 @@
     display: inline-block;
 }
 
-.corner-logo {
-    height: calc(var(--topbar-height) - 1vmin);
-    width: calc(var(--topbar-height) - 1vmin);
-    margin: .5vmin;
-    border-radius: 1vmin;
-    background-color: inherit;
-    border: none;
-    color: #333;
-    background-size: 100%;
-}
-
-button.corner-logo:hover{
-    border-radius: 0;
-    background-color: #888;
-}
-
 .feature-btn{
-    height: calc(var(--msg-inp-height) - 2px);
-    width: calc(var(--msg-inp-height) - 2px);
+    height: var(--msg-inp-height);
+    width: var(--msg-inp-height);
     background-color: inherit;
     border: none;
     color: #333;
@@ -165,7 +148,7 @@ button.corner-logo:hover{
 
 #send {
     background-color: #000;
-    border: 1px solid #e1ffff;
+    border: none;
     border-radius: 1vmin;
     background-image: url('../png/sendbtn.png');
     background-size: 100%;
@@ -179,34 +162,9 @@ button.corner-logo:hover{
 #chat-page > #msg-inp-box > #additionalfeatures {
     grid-area: additionalfeatures;
     background-color: inherit;
-    border: 1px solid #e1ffff;
     margin: calc((var(--msg-box-height) - var(--msg-inp-height)) / 2);
     height: var(--msg-inp-height);
     padding: 0;
     display: flex;
-}
-
-/*tooltip styles*/
-
-[data-tooltip]:before {
-    content: attr(data-tooltip);
-    position: absolute;
-    opacity: 0;
-    transition: all 0.15s ease;
-    padding: .5vmin;
-    color: #e1ffff;
-    border-radius: 1vmin;
-    font-size: 2vmin;
-    line-height: 2vmin;
-    pointer-events: none;
-}
-
-[data-tooltip]:hover:before {
-    /* needed - do not touch */
-    opacity: 1;
-    
-    /* customizable */
-    background: #333;
-    margin-top: 1vmin;
-    margin-left: 1vmin;
+    background-color: #333;
 }

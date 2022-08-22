@@ -28,7 +28,7 @@
     font-style: normal;
 }
 
-#chat-page {
+#page {
     background-color: #e1ffff;
     position: fixed;
     top: 0;
@@ -44,84 +44,6 @@
         "msginpbox";
 }
 
-#chat-page > * {
+#page > * {
     background-color: #000;
-}
-
-#chat-page > #top-bar {
-    grid-area: topbar;
-    display: grid;
-    grid-template-columns: var(--topbar-height) calc(80% - var(--topbar-height)) 20%;
-    background-color: #e1ffff;
-    height: var(--topbar-height);
-}
-
-#chat-page > #top-bar > * {
-    background-color: #000;
-    height: var(--topbar-height);
-}
-
-#top-left > * {
-    display: inline-block;
-}
-
-#chat-page > #left-bar {
-    grid-area: leftbar;
-}
-
-#chat-page > #dm-chat-list {
-    grid-area: dm-chat-list;
-}
-
-#chat-page > #grp-chat-list {
-    grid-area: grp-chat-list;
-}
-
-#chat-page > #profile-photo {
-    grid-area: profile-photo;
-}
-
-#top-bar > * {
-    display: inline-block;
-}
-
-.corner-logo {
-    height: calc(var(--topbar-height) - 1vmin);
-    width: calc(var(--topbar-height) - 1vmin);
-    margin: .5vmin;
-    border-radius: 1vmin;
-    background-color: inherit;
-    border: none;
-    color: #333;
-    background-size: 100%;
-}
-
-button.corner-logo:hover{
-    border-radius: 0;
-}
-
-[data-tooltip]:before {
-    /* needed - do not touch */
-    content: attr(data-tooltip);
-    position: absolute;
-    opacity: 0;
-    
-    /* customizable */
-    transition: all 0.15s ease;
-    padding: .5vmin;
-    color: #e1ffff;
-    border-radius: 1vmin;
-    font-size: 2vmin;
-    line-height: 2vmin;
-    pointer-events: none;
-}
-
-[data-tooltip]:hover:before {
-    /* needed - do not touch */
-    opacity: 1;
-    
-    /* customizable */
-    background: #333;
-    margin-top: 1vmin;
-    margin-left: 1vmin;
 }

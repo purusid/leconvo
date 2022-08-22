@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/assets/css/loader.css">
     <link rel="stylesheet" href="/assets/css/chat-page.css">
     <link rel="stylesheet" href="/assets/css/main-page.css">
-    <link rel="shortcut icon" href="/assets/png/leconvo-nobg.png">
+    <link rel="shortcut icon" href="/assets/png/leconvo.png">
 </head>
 
 <body onload="init()">
@@ -38,13 +38,13 @@
             </div>
         </div>
         <div class="loader-flex-container" style="background-color: #0000;" style="z-index: 15;">
-            <img src="/assets/png/leconvo-nobg.png" style="height: 20vmin;width:20vmin">
+            <img src="/assets/png/leconvo.png" style="height: 20vmin;width:20vmin">
         </div>
     </div>
     <div id="chat-page">
         <div id="top-bar">
             <div style="background-color: #333;">
-                <button data-tooltip="Back To Home Screen" style="background-image: url('/assets/png/backbtn.png')" class="corner-logo" onclick="document.getElementById('chat-page').style.display='none'"></button>
+                <button data-tooltip="Back To Home Screen" style="background-image: url('/assets/png/backbtn.png')" class="corner-logo" onclick="chat.exit()"></button>
             </div>
             <div>
                 <button data-tooltip="Chat Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
@@ -70,31 +70,46 @@
             <div>
             </div>
             <div id="top-right" style="display: flex;background-color: #333;">
-                <img src="/assets/png/leconvo-nobg.png" class="corner-logo" alt="le convo app logo">
+                <img src="/assets/png/leconvo.png" class="corner-logo" alt="le convo app logo">
                 <div style="line-height: var(--topbar-height);height: var(--topbar-height);color: #e1ffff;font-size: 3vmin;">LeConvo</div>
             </div>
         </div>
         <div id="chat-list-area">
-            <div id="dm-chat-list">
+            <div id="dm-chat-list" class="chat-list">
                 <div class="list-title">
                     <img class="list-title-ico" src="/assets/png/defpfp.png">
                     <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 1vmin;font-size: 3vmin;">Contacts</div>
                 </div>
-                <div id="contact-list"></div>
+                <div id="contact-list" class="list">
+                    <button class="list-btn" data-tooltip="(full user name with ID and all will come here)" onclick="chat.open()">
+                        <img src="/assets/png/defpfp.png" class="list-title-ico">
+                        <div>Demo Button eheheheh .................</div>
+                    </button>
+                </div>
             </div>
-            <div id="grp-chat-list">
+            <div id="grp-chat-list" class="chat-list">
                 <div class="list-title">
-                    <img class="list-title-ico" src="/assets/png/leconvo-nobg.png">
+                    <img class="list-title-ico" src="/assets/png/leconvo.png">
                     <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Convos</div>
                 </div>
-                <div id="convo-list"></div>
+                <div id="convo-list" class="list">
+                    <button class="list-btn" data-tooltip="(full user name with ID and all will come here)" onclick="chat.open()">
+                        <img src="/assets/png/defpfp.png" class="list-title-ico">
+                        <div>Demo Button eheheheh .................</div>
+                    </button>
+                </div>
             </div>
-            <div id="meet-list">
+            <div id="meet-list" class="chat-list">
                 <div class="list-title">
                     <img class="list-title-ico" src="/assets/png/meet-ico.png">
                     <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Meetings</div>
                 </div>
-                <div id="meeting-list"></div>
+                <div id="meeting-list" class="list">
+                    <button class="list-btn" data-tooltip="(full user name with ID and all will come here)" onclick="chat.open()">
+                        <img src="/assets/png/defpfp.png" class="list-title-ico">
+                        <div>Demo Button eheheheh .................</div>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

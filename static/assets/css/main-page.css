@@ -1,6 +1,6 @@
 /*root variables*/
 
-:root{
+:root {
     --topbar-height: 5vmin;
     --topbar-width: 100vw;
     --list-title-height: var(--topbar-height);
@@ -61,6 +61,11 @@
 
 /*list styles*/
 
+.chat-list {
+    display: grid;
+    grid-template-rows: calc(var(--list-title-height) + 2vmin);
+}
+
 .list-title {
     width: 100%;
     height: var(--list-title-height);
@@ -82,6 +87,37 @@
 button.list-title-ico:hover {
     border-radius: 0;
     background-color: #888;
+}
+
+.list-btn {
+    width: 100%;
+    height: var(--list-title-height);
+    display: grid;
+    grid-template-columns: var(--topbar-height) calc(100% - var(--topbar-height));
+    grid-template-areas: "img div";
+    background-color: #8888;
+    border-radius: 1vmin;
+    color: #e1ffff;
+    border: none;
+}
+
+.list-btn > div {
+    grid-area: div;
+    height: var(--list-title-height);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    line-height: var(--list-title-height);
+    width: calc(100% - var(--topbar-height));
+    display: block;
+}
+
+.list-btn > img {
+    grid-area: img;
+}
+
+.list-btn:hover {
+    background-color: #000;
+    border-radius: 0;
 }
 
 /*corner-logo styles*/
@@ -108,6 +144,7 @@ button.corner-logo:hover {
     position: absolute;
     opacity: 0;
     transition: all 0.15s ease;
+    transition-delay: .5s;
     padding: .5vmin;
     color: #e1ffff;
     border-radius: 1vmin;

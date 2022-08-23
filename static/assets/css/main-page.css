@@ -28,6 +28,7 @@ button{
         "topbar"
         "msgdispbox"
         "msginpbox";
+    display: none;
 }
 
 #main-page > * {
@@ -103,10 +104,10 @@ button.list-title-ico:hover {
     display: grid;
     grid-template-columns: var(--topbar-height) calc(100% - var(--topbar-height));
     grid-template-areas: "img div";
-    background-color: #8888;
+    background-color: #333;
     border-radius: 1vmin;
     color: #e1ffff;
-    border: 1vmin #0008;
+    border: none;
     box-shadow: .5vmin .5vmin .5vmin #0008;
 }
 

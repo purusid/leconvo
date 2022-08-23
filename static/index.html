@@ -6,13 +6,16 @@
     <title>LeConvo</title>
     <script src="/assets/js/loader.js"></script>
     <script src="/assets/js/ui-script.js"></script>
+    <script src="/assets/js/user-script.js"></script>
     <link rel="stylesheet" href="/assets/css/loader.css">
-    <link rel="stylesheet" href="/assets/css/chat-page.css">
     <link rel="stylesheet" href="/assets/css/main-page.css">
+    <link rel="stylesheet" href="/assets/css/chat-page.css">
+    <link rel="stylesheet" href="/assets/css/login-page.css">
     <link rel="shortcut icon" href="/assets/png/leconvo.png">
 </head>
 
 <body onload="init()">
+    <!--This App Is Not Secure. Will Add Encryption And Passwords Later-->
     <div id="loader">
         <div class="loader-flex-container">
             <div class="loader">
@@ -39,6 +42,12 @@
         </div>
         <div class="loader-flex-container" style="background-color: #0000;" style="z-index: 15;">
             <img src="/assets/png/leconvo.png" style="height: 20vmin;width:20vmin">
+        </div>
+    </div>
+    <div id="login-page">
+        <div id="login-inp-container">
+            <input type="text" id="user-name" placeholder="User Name...">
+            <button onclick="login()">Login</button>
         </div>
     </div>
     <div id="chat-page">

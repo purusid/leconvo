@@ -1,17 +1,30 @@
-/*global variables*/
+/*UI variables*/
 var chat = {
     open: function () {
-        document.getElementById('main-page').style.display = 'none';
-        document.getElementById('chat-page').style.display = 'grid';
+        pages.main.style.display = 'none';
+        pages.chat.style.display = 'grid';
     },
     exit: function () {
-        document.getElementById('chat-page').style.display = 'none';
-        document.getElementById('main-page').style.display = 'grid';
+        pages.chat.style.display = 'none';
+        pages.main.style.display = 'grid';
     }
 }
 
-/*initialize global variables*/
-function initglobalvars() {
+var pages = {}
+
+/*initialize UI variables*/
+function inituivars() {
+    pages.main = document.getElementById('main-page');
+    pages.login = document.getElementById('login-page');
+    pages.chat = document.getElementById('chat-page');
     chat.page = document.getElementById('chat-page');
     chat.msginp = document.getElementById('msg');
+}
+
+function showpage(id, cssdisplayvalue){
+    let pagearr=Object.values(pages);
+    for (let i in pagearr){
+        pagearr[i].style.display = 'none';
+    }
+    document.getElementById(id).style.display = cssdisplayvalue;
 }

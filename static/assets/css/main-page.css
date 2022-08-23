@@ -6,6 +6,12 @@
     --list-title-height: var(--topbar-height);
 }
 
+/*general styles*/
+
+button{
+    cursor: pointer;
+}
+
 /*main page styles*/
 
 #main-page {
@@ -71,7 +77,9 @@
     height: var(--list-title-height);
     display: flex;
     background-color: #000;
+    box-shadow: .5vmin .5vmin .5vmin #0008;
     color: #e1ffff;
+    border-radius: 1vmin;
 }
 
 .list-title-ico {
@@ -79,7 +87,7 @@
     width: calc(var(--list-title-height) - 1vmin);
     margin: .5vmin;
     border-radius: 1vmin;
-    background-color: inherit;
+    background-color: #0000;
     border: none;
     background-size: 100%;
 }
@@ -98,7 +106,8 @@ button.list-title-ico:hover {
     background-color: #8888;
     border-radius: 1vmin;
     color: #e1ffff;
-    border: none;
+    border: 1vmin #0008;
+    box-shadow: .5vmin .5vmin .5vmin #0008;
 }
 
 .list-btn > div {
@@ -117,7 +126,7 @@ button.list-title-ico:hover {
 
 .list-btn:hover {
     background-color: #000;
-    border-radius: 0;
+    border-radius: .5vmin;
 }
 
 /*corner-logo styles*/
@@ -127,7 +136,7 @@ button.list-title-ico:hover {
     width: calc(var(--topbar-height) - 1vmin);
     margin: .5vmin;
     border-radius: 1vmin;
-    background-color: inherit;
+    background-color: #0000;
     border: none;
     background-size: 100%;
 }

@@ -30,4 +30,6 @@
     margin-bottom: 1vmin;
 }
 
-#login-inp-container>button{background-color: #8883;}
+#login-inp-container > button {
+    background-color: #8883;
+}

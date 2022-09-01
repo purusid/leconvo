@@ -26,7 +26,7 @@
 
 @font-face {
     font-family: 'fixedsys';
-    src: url('assets/ttf/fixedsys.ttf');
+    src: url('/assets/ttf/fixedsys.ttf');
     font-weight: normal;
     font-style: normal;
 }

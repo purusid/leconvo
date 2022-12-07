@@ -1,117 +1,12 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>LeConvo</title>
-    <script src="/assets/js/loader.js"></script>
-    <script src="/assets/js/ui-script.js"></script>
-    <script src="/assets/js/user-script.js"></script>
-    <link rel="stylesheet" href="/assets/css/loader.css">
-    <link rel="stylesheet" href="/assets/css/main-page.css">
-    <link rel="stylesheet" href="/assets/css/chat-page.css">
-    <link rel="stylesheet" href="/assets/css/login-page.css">
-    <link rel="shortcut icon" href="/assets/png/leconvo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
-
-<body onload="init()">
-    <!--This App Is Not Secure. Will Add Encryption And Passwords Later-->
-    <div id="loader">
-        <div class="loader-flex-container">
-            <div class="loader">
-                <div></div>
-                <div>
-                    <img src="/assets/png/arrow.png" class="up-arrow loader-arrow" style="transform: scale(var(--init-scale));">
-                </div>
-                <div></div>
-
-                <div style="transform: rotateZ(-90deg);">
-                    <img src="/assets/png/arrow.png" class="lt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
-                </div>
-                <div></div>
-                <div style="transform: rotateZ(90deg);">
-                    <img src="/assets/png/arrow.png" class="rt-arrow loader-arrow" style="transform: scale(var(--init-scale));">
-                </div>
-
-                <div></div>
-                <div style="transform: rotateZ(180deg);">
-                    <img src="/assets/png/arrow.png" class="dw-arrow loader-arrow" style="transform: scale(var(--init-scale));">
-                </div>
-                <div></div>
-            </div>
-        </div>
-        <div class="loader-flex-container" style="background-color: #0000;" style="z-index: 15;">
-            <img src="/assets/png/leconvo.png" style="height: 20vmin;width:20vmin">
-        </div>
-    </div>
-    <div id="login-page">
-        <div id="login-inp-container">
-            <input type="text" id="user-name" placeholder="User Name...">
-            <button onclick="login()">Login</button>
-        </div>
-    </div>
-    <div id="chat-page">
-        <div id="top-bar">
-            <div style="background-color: #333;">
-                <button data-tooltip="Back To Home Screen" style="background-image: url('/assets/png/backbtn.png')" class="corner-logo" onclick="chat.exit()"></button>
-            </div>
-            <div>
-                <button data-tooltip="Chat Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo"></button>
-            </div>
-        </div>
-        <div id="msg-disp-box"></div>
-        <div id="msg-inp-box">
-            <div id="msg-inp-container">
-                <textarea id="msg" placeholder="Enter Message..." data-tooltip="Enter Message"></textarea>
-                <button id="send" data-tooltip="Send Message"></button>
-            </div>
-            <div id="additionalfeatures">
-                <button class="feature-btn" style="background-image: url('/assets/png/emo-ico.png')" data-tooltip="Emojis"></button>
-                <button class="feature-btn" style="background-image: url('/assets/png/animations-ico.png')" data-tooltip="Animations"></button>
-            </div>
-        </div>
-    </div>
-    <div id="main-page">
-        <div id="top-bar">
-            <div style="background-color: #333;">
-                <button data-tooltip="LeConvo Settings" style="background-image: url('/assets/png/settings.png')" alt="settings" class="corner-logo" onclick="window.location='/settings/';"></button>
-            </div>
-            <div>
-            </div>
-            <div id="top-right" style="display: flex;background-color: #333;">
-                <img src="/assets/png/leconvo.png" class="corner-logo" alt="le convo app logo">
-                <div style="line-height: var(--topbar-height);height: var(--topbar-height);color: #e1ffff;font-size: 3vmin;">LeConvo</div>
-            </div>
-        </div>
-        <div id="chat-list-area">
-            <div id="dm-chat-list" class="chat-list">
-                <div class="list-title">
-                    <img class="list-title-ico" src="/assets/png/defpfp.png">
-                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 1vmin;font-size: 3vmin;">Contacts(Coming Soon)</div>
-                </div>
-                <div id="contact-list" class="list"></div>
-            </div>
-            <div id="grp-chat-list" class="chat-list">
-                <div class="list-title">
-                    <img class="list-title-ico" src="/assets/png/leconvo.png">
-                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Convos</div>
-                </div>
-                <div id="convo-list" class="list">
-                    <button class="list-btn" data-tooltip="(full chat name with ID and all will come here)" onclick="chat.open()">
-                        <img src="/assets/png/defpfp.png" class="list-title-ico">
-                        <div>Demo Button eheheheh .................</div>
-                    </button>
-                </div>
-            </div>
-            <div id="meet-list" class="chat-list">
-                <div class="list-title">
-                    <img class="list-title-ico" src="/assets/png/meet-ico.png">
-                    <div style="height: var(--list-title-height);line-height: var(--list-title-height);margin-left: 2vmin;font-size: 3vmin;">Meet(Coming Soon)</div>
-                </div>
-                <div id="meeting-list" class="list"></div>
-            </div>
-        </div>
-    </div>
+<body>
+    
 </body>
-
 </html>
